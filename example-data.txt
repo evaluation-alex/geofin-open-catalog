@@ -1,0 +1,25 @@
+Documents in config.ELASTICSEARCH.INDEX.DATA need to have a nested field in the following format appended to them.
+
+   "gfloc": [
+      {
+         "date": "2014-05-27", # Date
+         "country": "US", # Original country
+         "city": "Rollinsford",  # Original city name
+         "locus_actor": "fin_inst_branch", # Which field we use to attribute location
+         "best": { # Resolved location information
+            "loc": { # Lat/lng of resolved location
+               "lon": -70.82034, 
+               "lat": 43.2362
+            },
+            "country": "US", # Resolved country name
+            "score": 999,  # Deprecated
+            "city": "Rollinsford", # Resolved city name
+            "exact": true,  # Deprecated
+            "fips": "US",   # Deprecated
+            "state": "NH",  # Resolved state
+            "id": "5091916" # Geoname ID of resolved location
+         },
+         "locus": "rollinsford__nh__us",  # Unique location name
+         "state": "NH", # Original state name
+         "type": "type_transfer" # Type of document
+      },

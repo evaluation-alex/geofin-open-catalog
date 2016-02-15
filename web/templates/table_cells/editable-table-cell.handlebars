@@ -1,0 +1,10 @@
+
+<span {{bind-attr class=":ember-table-content view.remoteEdit:blackcell view.localEdit:bluecell:greycell"}}>
+  {{#if view.isEditing}}
+    {{view view.innerTextField}}
+  {{else}}
+    <span class='content'>{{view.cellContent}}</span>
+  {{/if}}
+  <i class="fa fa-pencil pull-right" style="padding-top:.6em; color: rgb(149, 149, 149);"></i>
+</span>
+

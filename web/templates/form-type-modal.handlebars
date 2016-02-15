@@ -1,0 +1,43 @@
+
+<h3> Location Definition </h3>
+<p class="documentation">
+    Choose the field(s) used to assign a location to a given report.
+    Note that choosing more than one can result in double counting reports.
+</p>
+<ul class="list-group-form-type-modal list-group" style="background:rgba(0, 0, 0, .3); padding:10px;">
+    {{#each content.locus_actors}}
+        <li class="list-group-item subfield-button"
+            {{action "toggle_subfield" this}}
+            {{bind-attr id=this.id}}
+            {{bind-attr class="this.toggled::hidden-subfield"}}>
+                {{this.locus_actor}}
+                {{#if this.toggled}}
+                    <i class="fa fa-minus pull-right" {{bind-attr class="this.toggled::hidden-subfield"}}></i>
+                {{else}}
+                    <i class="fa fa-plus pull-right" {{bind-attr class="this.toggled::hidden-subfield"}}></i>
+                {{/if}}
+        </li>
+    {{/each}}
+</ul>
+
+<h3> Amount Definition </h3>
+<p class="documentation">
+    Choose the field(s) used to assign a dollar value to a given report.report
+    Note that choosing more than one can result in double counting reports.
+</p>
+<ul class="list-group-form-type-modal list-group" style="background:rgba(0, 0, 0, .3); padding:10px;">
+    {{#each content.amount_types}}
+        <li class="list-group-item subfield-button"
+            {{action "toggle_subfield" this}}
+            {{bind-attr id=this.id}}
+            {{bind-attr class="this.toggled::hidden-subfield"}}>
+                {{this.amount_type}}
+                {{#if this.toggled}}
+                    <i class="fa fa-minus pull-right" {{bind-attr class="this.toggled::hidden-subfield"}}></i>
+                {{else}}
+                    <i class="fa fa-plus pull-right" {{bind-attr class="this.toggled::hidden-subfield"}}></i>
+                {{/if}}
+        </li>
+    {{/each}}
+</ul>
+

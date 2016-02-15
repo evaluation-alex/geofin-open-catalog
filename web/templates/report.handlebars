@@ -1,0 +1,52 @@
+
+{{!--
+{{#each f in fetcher_names}}
+    <button {{action "fetch" f}} class="btn btn-primary"> {{f}} </button>
+{{/each}}
+--}}
+
+<div class="row-fluid row-report" style="height:600px;">
+    <div class="col-sm-5" id="report-table-wrapper" style="height:100%;">
+        <div class="row-fluid">
+            <div class="col-xs-4">
+                {{data.min_showing}} - {{data.max_showing}} <br>
+                of {{data.total_count}} reports
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-primary" {{action "export_data"}}>
+                    Export
+                </button>
+            </div>
+            <div class="col-xs-4 pull-right">
+                <ul class="pager">
+                    {{#if show_page_down}}
+                        <button class="btn btn-primary" {{action "paginate" -1}}> < </button>
+                    {{/if}}
+                    {{#if show_page_up}}
+                        <button class="btn btn-primary" {{action "paginate"  1}}> > </button>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+        <div class="table-container" style="height:95%; clear:both;">
+            {{
+                table-component
+                columnsBinding   = "table_columns"
+                contentBinding   = "data.reports"
+                hasFooter        = false
+                forceFillColumns = true
+                onClick          = onClick
+                onRightClick     = onRightClick
+            }}
+        </div>
+    </div>
+    <div class="col-sm-7" style='height:100%;'>
+        {{#if use_graphene}}
+            <iframe id="cse-iframe"
+             {{bind-attr src="targetObject.report_url"}}
+             style="height:100%; width:100%;" frameborder="0"></iframe>
+        {{else}}
+            <div id='report-viewer' style="height:100%; width:100%;"></div>
+        {{/if}}
+    </div>
+</div>

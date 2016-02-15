@@ -1,0 +1,141 @@
+<div id="content" {{bind-attr class=":snap-content slider_open:small-content"}} data-snap-ignore="true">
+    <nav {{bind-attr class=":navbar :navbar-top :navbar-default client.loading:navbar-loading"}} role="navigation">
+      <div class="container-fluid">
+
+        <div id="open-left">
+            {{#if slider_open}}
+                <
+            {{else}}
+                >
+            {{/if}}
+            <br>
+            {{#if client.loading}}
+                <i class="fa fa-spinner fa-spin"></i>
+            {{/if}}
+        </div>
+
+        <div class="navbar-header navbar-right">
+            <a id="geofin-brand" class="navbar-brand"> Geofin </a>
+        </div>
+
+        <ul class="nav navbar-nav morgan-nav" style="padding-left:5px;">
+            <li class="gf-select-menu">
+                <div class="gf-select-label">
+                    Subset
+                </div>
+                {{select-editor
+					title            = "Edit Subset"
+					appView			 = "App.SubsetPopoverContentView"
+                    id               = "subset-select"
+                    prompt           = " - Subset -"
+                    contentBinding   = "subset_options"
+                    selectionBinding = "state.user_query"
+                    optionLabelPath  = "label"
+                    optionValuePath  = "value"
+					placement		 = "bottom-right"
+                }}
+            </li>
+
+            <li class="gf-select-menu">
+                <div class="gf-select-label">
+                    Metric
+                </div>
+                {{select-editor
+					title			 = "Edit Metric"
+				    appView          = "App.MetricPopoverContentView"
+                    id               = "metric-select"
+                    prompt           = " - Metric -"
+                    contentBinding   = "metric_type_options"
+					selectionBinding = "state.metric_type"
+                    optionLabelPath  = "label"
+                    optionValuePath  = "value"
+					placement		 = "bottom-right"
+                }}
+            </li>
+
+            <li class="gf-select-menu">
+                <div class="gf-select-label">
+                    Compare
+                </div>
+                {{select-editor
+					title			 = "Edit Compare"
+					appView			 = "App.ComparePopoverContentView"
+                    id               = "normalization-select"
+                    prompt           = "- Compare -"
+                    contentBinding   = "norm_type_options"
+                    selectionBinding = "state.norm_type"
+                    optionLabelPath  = "label"
+                    optionValuePath  = "value"
+					placement		 = "bottom-right"
+                }}
+            </li>
+            {{#if state.selected}}
+					<li>
+					<div class="gf-select-label"></div>
+                    	<button class="btn btn-primary" {{action "clear_selection"}}>
+                        Clear
+                    </button>
+                </li>
+            {{/if}}
+        </ul>
+      </div>
+    </nav>
+    <div id="map"></div>
+    
+    <div class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="lower-navbar">
+        <ul class="nav navbar-nav" id="ul-navbar-bottom">
+            {{#each f in state.form_types}}
+                {{view App.FormToggleView f=f}}
+            {{/each}}
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="gf-select-menu">
+                <div class="gf-select-label">
+                    Location
+                </div>
+                {{gf-select
+                    id               = "locus-select"
+                    contentBinding   = "heatmap.place_list"
+                    prompt           = " - Click To Select -"
+                    label            = "Region"
+                    optionLabelPath  = "name"
+                    optionValuePath  = "name"
+                    selectionBinding = "locus"
+					classNames		 = "dropup"
+                }}
+            </li>
+            <li class="gf-select-menu" id="wrapper-dissect-form-type">
+                <div class="gf-select-label">
+                    Border
+                </div>
+                {{gf-select
+                    id               = "border-select"
+                    prompt           = "- Select -"
+                    contentBinding   = "border_type_options"
+                    selectionBinding = "state.borders_selection"
+                    optionLabelPath  = "label"
+                    optionValuePath  = "value"
+					classNames		 = "dropup"
+                }}
+            </li>
+            <li id="slider"></li>
+        </ul>
+    </div>
+</div>
+
+<div class="snap-drawers">
+    <div class="snap-drawer snap-drawer-left">
+        <div class="drawer-inner" style="margin-top:-1px;">
+            {{partial "contracted"}}
+        </div>
+    </div>
+</div>
+
+<!-- This is a total hack.  Need to fix the overflows on the Ember table header... -->
+<div id="time-series-context-menu">
+    <ul class="dropdown-menu" role="menu" style="cursor:contextmenu;">
+        <li><a tabindex="-1" id="scale">Scale To Cell</a></li>
+        <li><a tabindex="-1" id="log">Log Scale</a></li>
+    </ul>
+</div>

@@ -1,0 +1,41 @@
+<h4 class="sidebar-table-header">
+    Activity By Subject
+</h4>
+
+<div class="row control-panel">
+    {{#if single_subject}}
+        <div class="col-xs-4">
+            <button class="btn btn-primary" {{action "clear_subject"}}>
+                Clear Subject
+            </button>
+        </div>
+    {{/if}}
+    <div class="col-xs-4">
+        <button class="btn btn-sidebar" {{action "export_data"}}>
+            Export
+        </button>
+    </div>
+</div>
+
+{{#if table_data}}
+    {{#if eub}}
+        <span style="color:red;text-align:right;"> Values accurate &plusmn; {{eub}} </span>
+    {{/if}}
+    <div class="table-container" id="bad-actor-table">
+        {{
+            table-component
+            hasFooter        = false
+            forceFillColumns = true
+            contentBinding   = "table_data"
+            columnsBinding   = "table_columns"
+            onClick          = table_onClick
+            onRightClick     = table_onRightClick
+            con              = controller
+        }}
+    </div>
+{{else}}
+    <h4 class="sidebar-table-header">
+        {{#if client.loading}} Loading... {{else}} No Selection or No Data {{/if}}
+    </h4>
+{{/if}}
+

@@ -1,0 +1,1065 @@
+
+/* Editor */
+    .ace_editor {
+        height     : 200px;
+        margin-top : 20px;
+    }
+
+    #ace-wrapper {
+        border     : 1px solid darkgrey;
+        padding    : 15px;
+        margin     : 3px;
+        margin-top : 30px;
+    }
+/**/
+
+/* General */
+    html, body{
+        height    : 100px;
+        max-width : 100%;
+    }
+
+    body {
+        padding          : 0;
+        margin           : 0;
+        background-color : rgba(15, 21, 37, 0.8)
+    }
+
+    #map {
+        height     : 100%;
+        max-height : 100%;
+        width      : 100%;
+        max-width  : 100%;
+    }
+
+    .small-content {
+        width : 60%;
+    }
+
+    .invisible {
+        display : none;
+    }
+
+    #global-dropzone { 
+        background : none repeat scroll 0 0 grey;
+        height     : 0px;
+        width      : 50%;
+        position   : fixed;
+        top        : 0;
+        left       : 0;
+        z-index    : 10001;
+        opacity    : 0;
+        -webkit-transition : opacity 0.2s ease-in-out;
+        -moz-transition    :  opacity 0.2s ease-in-out;
+        -o-transition      :  opacity 0.2s ease-in-out;
+        transition         :  opacity 0.2s ease-in-out;
+    }
+
+    #subject-dropzone {
+        background : none repeat scroll 0 0 red;
+        height     : 0px;
+        width      : 50%;
+        position   : fixed;
+        top        : 0;
+        left       : 50%;
+        z-index    : 10001;
+        opacity    : 0;
+        -webkit-transition : opacity 0.2s ease-in-out;
+        -moz-transition    : opacity 0.2s ease-in-out;
+        -o-transition      : opacity 0.2s ease-in-out;
+        transition         : opacity 0.2s ease-in-out;
+    }
+
+    #no-permission-dropzone {
+        background : none repeat scroll 0 0 black;
+        height     : 0px;
+        width      : 100%;
+        position   : fixed;
+        top        : 0;
+        left       : 0;
+        z-index    : 10001;
+        opacity    : 0;
+        -webkit-transition : opacity 0.2s ease-in-out;
+        -moz-transition    :  opacity 0.2s ease-in-out;
+        -o-transition      :  opacity 0.2s ease-in-out;
+        transition         :  opacity 0.2s ease-in-out;
+    }
+
+    #global-dropzone.visible { 
+        height  : 100%;
+        opacity : 0.8;
+    }
+
+    #subject-dropzone.visible {
+        height  : 100%;
+        opacity : 0.8;
+    }
+
+    #no-permission-dropzone.visible {
+        height  : 100%;
+        opacity : 0.8;
+    }
+
+
+    #global-dropzone h2 { 
+        display     : block;
+        position    : fixed;
+        top         : 50%;
+        left        : 0%;
+        right       : 50%;
+        color       : #fff;
+        line-height : 50px;
+        font-size   : 45pt;
+        z-index     : -1;
+        text-shadow : 3px 3px 4px #000;
+        font-weight : 350;
+    }
+
+    #subject-dropzone h2 {
+        display     : block;
+        position    : fixed;
+        top         : 50%;
+        left        : 50%;
+        right       : 0%;
+        color       : #fff;
+        line-height : 50px;
+        font-size   : 45pt;
+        z-index     : -1;
+        text-shadow : 3px 3px 4px #000;
+        font-weight : 350;
+    }
+/**/
+
+
+/* Background for page + snap drawers */
+    .snap-content { background: #131725; }
+    .snap-drawers { background: #131725; }
+    .snap-drawer  { background: #131725; }
+
+    .snap-drawer {
+        width: auto;
+    }
+/**/
+
+
+/* Login */
+    .splash-header {
+        text-align : center;
+        color      : white;
+    }
+
+    #login-wrapper {
+        z-index  : 999;
+        height   : 54px;
+        position : absolute;
+        top      : 0px;
+        right    : 10px;
+    }
+
+    #login-wrapper .btn {
+        padding       : 0px;
+        padding-left  : 3px;
+        padding-right : 3px;
+        margin        : 0px;
+        border-radius : 0px;
+        height        : 50%;
+        width         : 17px;
+    }
+
+    #btn-logout {
+        background : none;
+        color      : red;
+        border     : none;
+        cursor     : pointer;
+    }
+
+    #btn-account-settings {
+        background : none;
+        color      : lime;
+        border     : none;
+        cursor     : pointer;
+    }
+
+    #btn-account-settings.has-user-query {
+        background : rgb(140, 202, 197);
+        color      : white;
+    }
+
+    .slider-precision {
+        background: none;
+    }
+
+    #login-form {
+        position      : absolute;
+        top           : 20%;
+        border        : 1px solid #ccc;
+        color         : white;
+        padding       : 56px;
+        padding-top   : 0px;
+        border-radius : 10px;
+        width         : 50%;
+        margin-left   : 25%;
+    }
+
+    #login-form h1 {
+        font-size : 3em;
+    }
+
+    #login-form label {
+        color : rgb(140, 202, 197);
+    }
+
+    #login-form input {
+        background : rgb(140, 202, 197);
+        border     : none;
+        color      : white;
+        text-align : center;
+    }
+
+    #login-form button {
+        width      : 100%;
+        background : none;
+        color      : white;
+    }
+
+    .alert-danger-login {
+        text-align   : center;
+        color        : red;
+        background   : none;
+        border-color : red;
+        font-size    : 1.25em;
+        position     : absolute;
+        left         : 25%;
+        width        : 50%;
+        top          : 2%;
+    }
+
+    #sign-up {
+        position   : absolute;
+        bottom     : 0px;
+        color      : white;
+        left       : 25%;
+        width      : 50%;
+        text-align : center;
+    }
+/**/
+
+
+/* Navbar */
+    .navbar-top {
+        margin-bottom    : 0px;
+        background-color : rgba(15, 21, 37, 0.8);
+        z-index          : 10;
+        position         : absolute;
+        width            : 100%;
+        border           : none;
+        border-radius    : 0px;
+        border-bottom : 1px solid rgb(140, 202, 197);
+    }
+
+    .navbar-top .btn-primary,
+    .navbar-fixed-bottom .btn-primary {
+        height        : 34px;
+        margin-top    : 15px;
+        border-radius : 0px;
+    }
+
+
+    .navbar-loading {
+        border-bottom: 1px solid red !important;
+    }
+
+    .navbar-brand {
+        color         : red !important;
+        padding-right : 20px;
+        font-size     : 2em;
+    }
+
+
+    #clear-selection {
+        position    : absolute;
+        left        : 0px;
+        width       : 123px;
+        height      : 27px;
+        top         : 27px;
+        background  : transparent;
+        color       : white;
+        padding-top : 3px;
+
+        border-top-left-radius  : 0px;
+        border-top-right-radius : 0px;
+    }
+
+
+    #open-left {
+        color        : red;
+        position     : absolute;
+        padding-left : -15px;
+        margin-left  : -15px;
+        height       : 100%;
+        width        : 20px;
+        text-align   : center;
+        font-size    : 1.25em;
+        cursor       : pointer;
+    }
+
+    #open-left:hover {
+        color    : white;
+    }
+
+    #info-box {
+        background              : rgba(15, 21, 37, 0.8);
+        color                   : rgb(140, 202, 197);
+        border                  : 2px solid rgb(140, 202, 197);
+        border-radius           : 10px;
+        position                : relative;
+        right                   : 0px;
+        /*top                     : 54px;*/
+        padding-right           : 15px;
+        padding-bottom          : 10px;
+		padding-top				: 1px;
+        width                   : 200px;
+        text-align              : center;
+        margin-top          : 46px;
+        margin-right            : -3px;
+        border-top-left-radius  : 0px;
+        border-top-right-radius : 0px;
+        border-top              : 0px;
+    }
+
+    #locus-select         { min-width  : 200px; }
+    #metric-select        { min-width  : 133px; }
+    #normalization-select { min-width  : 133px; }
+    #ts-resolution-select { min-width  : 100px; }
+    #augmentation-select  { min-width  : 100px; }
+
+    .gf-select-menu {
+        padding-bottom  : 10px;
+        border-bottom   : none;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+        height     : 35px;
+        text-align : right;
+        min-width  : 100px;
+    }
+
+    .gf-select-menu .gf-select-label {
+        color      : #686868;
+        font-size  : .75em;
+        text-align : left;
+        margin     : 0px 10px;
+    }
+
+    .gf-select-menu:focus {
+        outline      : none;
+        border-color : white;
+    }
+
+    .gf-select-menu .ember-select-container {
+        margin-left : 3%;
+        margin-top  : 0px;
+        width       : 94%;
+        height      : 94%;
+    }
+
+    .gf-select-menu .ember-select-choice {
+        background    : transparent;
+        border-radius : 0px;
+        color         : white;
+        width         : 100%;
+        height        : 100%;
+    }
+
+    .ember-select-choice.btn i {
+        right: 10%;
+    }
+
+    .gf-select-menu .ember-select {
+        width : 100%;
+    }
+
+    .gf-select-menu .ember-select .dropdown-menu {
+        min-width      : 200px;
+        max-width      : 9999px;
+        padding-bottom : 0px;
+        width          : 94%;
+        margin-left    : 3%;
+        color          : white;
+        background     : rgba(48, 58, 71, 0.901961);
+    }
+
+    .gf-select-menu .ember-select-search {
+        color:black;
+        display: inline-block;
+        white-space: nowrap;
+        z-index: 10000;
+        min-height: 26px;
+        width: 100%;
+        margin: 0;
+        padding-bottom:10px;
+    }
+
+    .gf-select-menu .ember-select-search input {
+        padding-top    : 10px;
+        padding-bottom : 10px;
+        background     : rgb(61, 72, 84);
+        color          : white;
+    }
+
+    .gf-select-menu i {
+        color: grey;
+    }
+
+    .ember-select-results .ember-select-result-item.highlighted,
+    .ember-typeahead-results .ember-select-result-item.highlighted {
+        background-color : red;
+        color            : black;
+    }
+
+    .gf-select-menu .dropzone {
+        height:50px;
+        background: white;
+    }
+
+    .gf-select-menu .btn-default {
+        border-color: #686868;
+    }
+
+    .input-add-metric {
+        border      : none;
+        width       : 100%;
+        text-align  : center;
+    }
+
+    .input-add-metric-label {
+        font-weight : bold;
+    }
+/**/
+
+
+/* Bottom Navbar Inputs */
+    #slider {
+        width        : 300px;
+        margin-right : 30px;
+    }
+
+    .ui-rangeSlider {
+        height: 15px;
+    }
+
+    .ui-rangeSlider-arrow {
+        display: none;
+    }
+
+    .ui-rangeSlider-container {
+        height: 5px;
+    }
+
+    .ui-rangeSlider-bar {
+        height      : 5px;
+        background  : red;
+    }
+
+    .ui-rangeSlider-label {
+        font-size  : 12px;
+        bottom     : 15px;
+        background : none;
+        box-shadow : none;
+        color      : red;
+    }
+
+    .ui-rangeSlider-label-inner {
+        display: none;
+    }
+
+    ul.dropdown-menu-form {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    #form-selector {
+        position: absolute;
+        left: 2%;
+        bottom: 13%;
+        z-index: 999;
+    }
+
+    #form-selector li {
+        padding: 4px 4px;
+        border: none;
+        background-color:rgb(182, 182, 182);
+    }
+
+
+    .navbar-fixed-bottom {
+        margin-bottom    : 0px;
+        background-color : rgba(15, 21, 37, 0.8);
+        z-index          : 10;
+        border           : none;
+        border-radius    : 0px;
+    }
+
+    .form-select-link,
+    .form-select-link:link {
+        cursor            : context-menu;
+        color             : red !important;
+    }
+
+    .form-select-link:hover,
+    .form-select-link:focus,
+    .form-select-link:active, {
+        color : white !important;
+    }
+
+    .inactive-form-type {
+        color:grey !important;
+    }
+
+    .inactive-form-type:hover,
+    .inactive-form-type:focus,
+    .inactive-form-type:active {
+        color: white !important,
+    }
+
+    .subfield-button {
+        padding : 4px 4px;
+        color   : red !important;
+        border  : none;
+        cursor  : pointer;
+    }
+
+    .hidden-subfield {
+        color : grey !important;
+    }
+
+    .clicked-subfield:hover,
+    .clicked-subfield:focus,
+    .clicked-subfield:active {
+        color: white,
+        background-color: transparent;
+        border-color: white;
+    }
+
+    #border-select {
+        margin-right: 12px;
+    }
+/**/
+
+
+/* Legend */
+    .legend {
+        text-align    : right;
+        line-height   : 18px;
+        color         : #555;
+        margin-bottom : 10%;
+        cursor        : context-menu;
+    }
+    .legend i {
+        width       : 18px;
+        height      : 18px;
+        float       : left;
+        margin-left : 8px;
+        opacity     : 0.7;
+    }
+
+    .legend-title {
+        text-align: center;
+        font-weight: bold;
+        border-top: 1px solid grey;
+    }
+/**/
+
+
+/* Sidebar */
+    .btn-sidebar {
+        color: white;
+        border: 1px solid white;
+        background-color: transparent;
+    }
+
+    .btn-sidebar:hover {
+        background-color: #999898;
+    }
+
+    #button-expand-drawer {
+        float         : right;
+        border-radius : 0px;
+        padding       : 3px;
+    }
+
+    #button-expand-drawer:hover,
+    #button-contract-drawer:hover {
+        background-color: rgba(200, 200, 200, .2);
+    }
+
+    #button-contract-drawer {
+        border-radius: 0px;
+        padding: 10px;
+    }
+
+    .sidebar-table-header {
+        color      : white;
+        text-align : center;
+    }
+
+/*    .control-panel {*/
+/*        background-color : transparent;*/
+/*        color           : white !important;*/
+/*        padding-bottom  : 5px;*/
+/*        padding-top     : 5px;*/
+/*        padding-left    : 5px;*/
+/*        margin-right    : 0px !important;*/
+/*        margin-left     : 0px !important;*/
+/*    }*/
+
+/*    .control-panel .btn {*/
+/*        background-color : transparent;*/
+/*        color            : white;*/
+/*        border-color     : white;*/
+/*    }*/
+
+/*    .control-panel .row {*/
+/*        display: table;*/
+/*    }*/
+
+/*    .control-panel [class*="col-"] {*/
+/*        float: none;*/
+/*        display: table-cell;*/
+/*        vertical-align: top;*/
+/*    }*/
+
+    .tab-content-sidebar {
+        height:100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .one-hop-toggle-wrapper {
+        text-align: center;
+    }
+
+    #show-unresolved {
+        width: 100%;
+    }
+
+    #show-resolved {
+        width: 100%;
+    }
+
+    /* Bad Actor */
+        .input-bad-actor {
+            color      : black !important;
+            text-align : center;
+            height     : 50px;
+            width      : 100%;
+            padding    : 5px;
+        }
+
+    /* Profile */
+        .profile.list-group a {
+            cursor : pointer;
+        }
+/**/
+
+/* Table */
+    .table-container {
+      height : 90%; /* This needs to be fixed */
+    /*  color  : black;*/
+    }
+
+    .ember-table-left-table-block {
+        height: inherit !important;
+    }
+
+    .ember-table-tables-container {
+        height: inherit !important;
+        width: inherit !important;
+    }
+
+    .antiscroll-inner {
+        height : inherit !important;
+        width  : inherit !important;
+    }
+
+    .cell-content-rank {
+        float     : left;
+        color     : grey;
+        font-size : .75em;
+    }
+
+    .row-highlighted {
+        background : rgba(236, 221, 221, 0.3);
+    }
+
+    .table-inner-text-field {
+        color   : red !important;
+        border  : 1px solid red !important;
+        padding : 3px;
+        width   : 100%;
+    }
+/**/
+
+/* Chart */
+    .chart-container {
+      height: 500px;
+    }
+
+    #dissection-table {
+        color:black !important;
+        position:absolute;
+        height:100%;
+        width:100%;
+    }
+
+    #wrapper-dissect-form-type .ember-select {
+        width: 150px;
+        float: right;
+    }
+
+    #wrapper-dissect-run button {
+        width: 200px !important;
+        float: left;
+    }
+
+    #row-dissection-control {
+        color: black !important;
+    }
+
+    #row-dissection-control div {
+        padding-left:0px;
+        padding-right:0px;
+    }
+
+    #row-dissection-control .ember-select {
+        width: 100%;
+    }
+
+    #row-dissection-control .ember-select-choice {
+        width: 100%;
+    }
+
+    #row-dissection-control .dropdown-menu {
+        width: 100%;
+    }
+
+/**/
+
+
+/* Modals */
+    .report-modal .modal-dialog,
+    .add-columns-modal .modal-dialog {
+        width: 95%;
+    }
+
+    .report-modal .modal-content {
+        height: 800px;
+    }
+
+    .row-report {
+        height:400px;
+    }
+
+    .pager {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .pager > li > a {
+        border-radius: 0px;
+        color: white;
+        background   : transparent;
+        border-color : rgb(150, 0, 0);
+    }
+
+
+    .modal-dialog {
+        padding-top : 0px;
+        margin      : 0px auto;
+    }
+
+    .modal-content {
+        border-bottom-left-radius  : 30px;
+        border-bottom-right-radius : 30px;
+        border                     : 1px solid rgb(140, 202, 197);
+        border-top                 : none;
+        border-bottom              : 1px solid rgb(140, 202, 197);
+        background-color           : rgba(15, 21, 37, 0.8);
+        color                      : white;
+    }
+
+    .modal-title {
+        color: white;
+    }
+
+    .modal-header .close {
+        color       : red;
+        opacity     : 1;
+        border      : none;
+        text-shadow : none;
+    }
+
+    .modal-content .ember-select {
+        color: black;
+    }
+
+    .modal-content input,
+    .modal-content .list-group-item,
+    .modal-content .list-group {
+        background   : transparent;
+        border-color : grey;
+        color        : white;
+    }
+
+    .modal-content .btn-primary,
+    .navbar-top .btn-primary,
+    .navbar-fixed-bottom .btn-primary {
+        background   : transparent;
+        border-color : rgb(150, 0, 0);
+    }
+
+    .modal-content .btn-primary:hover,
+    .navbar-top .btn-primary:hover,
+    .navbar-fixed-bottom .btn-primary:hover {
+        background   : transparent;
+        border-color : red;
+    }
+
+    .modal-content .btn-cancel {
+        background   : transparent;
+        border-color : grey;
+        color        : grey;
+    }
+
+    .modal-content .btn-cancel:hover {
+        background   : transparent;
+        border-color : white;
+        color        : grey;
+    }
+
+    .list-group-form-type-modal {
+        background : white;
+    }
+/**/
+
+
+/* Leaflet */
+    .leaflet-top.leaflet-left {
+        background   : rgba(15, 21, 37, 0.8);
+        color        : rgb(140, 202, 197);
+        position     : relative;
+        top          : 51px;
+        display      : flex;
+        padding      : 10px;
+        padding-top  : 2px;
+        padding-left : 2px;
+		width		 : 85px;
+    }
+
+    .leaflet-top .leaflet-control {
+        margin-top : 5px;
+    }
+
+	.leaflet-control-zoom {
+		height: 52px;
+	}
+	
+    .leaflet-control-zoom a {
+        color      : white;
+        background : transparent;
+    }
+
+    .leaflet-control-zoom a:hover {
+        background-color : red;
+        color            : white;
+    }
+
+    #button-clear-selection { cursor : pointer; }
+    #button-grab { cursor : pointer; }
+
+    /* This is controlled via JS as well in main.js */
+    .leaflet-bottom {
+        padding-bottom : 54px;
+    }
+
+    .leaflet-container div.location-filter.button-container {
+        clear:both;
+    }
+
+    .leaflet-container div.location-filter.button-container a:hover {
+        color: red;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .leaflet-container div.location-filter.button-container a.enable-button {
+        padding: 10px;
+    }
+
+    .leaflet-popup-content-wrapper {
+        background    : rgba(15, 21, 37, 0.8);
+        color         : rgb(140, 202, 197);
+        border        : 1px solid rgb(140, 202, 197);
+        border-radius : 10px;
+    }
+
+    .leaflet-popup-tip {
+        background : transparent;
+        border     : 2px solid rgb(140, 202, 197);
+    }
+
+    .leaflet-control-attribution {
+        background : rgba(255, 255, 255, 0);
+        color      : rgb(65, 65, 65);
+    }
+
+    .leaflet-control-attribution a {
+        color : rgb(131, 0, 0)
+    }
+/**/
+
+
+/* Toggle Switch Styling */
+    .toggle-switch input[type="checkbox"] + div {
+      display: inline-block;
+      vertical-align: middle;
+      width: 3em;
+      height: 1em;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 0px;
+      margin: 0 .5em;
+      background: transparent;
+      background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), transparent), -webkit-linear-gradient(0deg, #8CCAC5 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      background-origin: border-box;
+      background-clip: border-box;
+      overflow: hidden;
+      -webkit-transition-duration: .4s;
+      -webkit-transition-property: padding, width, background-position, text-indent;
+      box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.2) inset, 0 0.45em 0 0.1em rgba(0, 0, 0, 0.05) inset;
+      font-size: 130%;
+    }
+/**/
+
+
+/* Legend Modal Styling */
+    #input-colorpicker {
+        font-size  : 1.4em;
+        padding    : 10px;
+        margin-top : 10px;
+        width      : 100%;
+        text-align : center;
+        border     : 1px solid grey;
+    }
+
+    .color-picker-wrapper input {
+        display : none;
+    };
+    
+    #input-n-steps {
+        font-size  : 1.4em;
+        padding    : 10px;
+        margin-top : 10px;
+        width      : 100%;
+        text-align : center;
+        border     : 1px solid grey;
+    }
+/**/
+
+
+/* Entity Resolution Styling */
+    .input-search-er {
+        padding: 7px;
+        text-align: center;
+        border: 1px solid grey;
+    }
+
+    .er-modal .modal-dialog {
+        width: 95%;
+    }
+
+    #er-toggle-wrapper {
+        bottom        : 10px;
+        right         : 10px;
+        top           : 10px;
+        text-align    : center;
+        padding       : 10px;
+        border-radius : 10px;
+    }
+
+    .er-edit-item {
+        border-left   : 4px solid rgb(48, 111, 228);
+    }
+
+    @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @-moz-keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
+    @keyframes fadeIn         { from { opacity:0; } to { opacity:1; } }
+
+    @-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+    @-moz-keyframes fadeOut    { from { opacity:1; } to { opacity:0; } }
+    @keyframes fadeOut         { from { opacity:1; } to { opacity:0; } }
+
+    .fade-in {
+        opacity:0;                             /* make things invisible upon start */
+        -webkit-animation : fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation    : fadeIn ease-in 1;
+        animation         : fadeIn ease-in 1;
+
+        -webkit-animation-fill-mode :forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode    :forwards;
+        animation-fill-mode         :forwards;
+
+        -webkit-animation-duration  : .1s;
+        -moz-animation-duration     : .1s;
+        animation-duration          : .1s;
+    }
+
+    #did-resolve {
+        opacity:1;                             /* make things invisible upon start */
+        -webkit-animation : fadeOut ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation    : fadeOut ease-in 1;
+        animation         : fadeOut ease-in 1;
+
+        -webkit-animation-fill-mode :forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode    :forwards;
+        animation-fill-mode         :forwards;
+
+        -webkit-animation-duration  : 2s;
+        -moz-animation-duration     : 2s;
+        animation-duration          : 2s;
+    }
+
+    /* Classes for cells in ER */
+    /* Order effects precedence, apparently */
+    .greycell {
+        color: rgb(159, 159, 159); /* Grey */
+    }
+
+    .blackcell {
+        color: rgb(119, 255, 119); /* Lime */
+    }
+
+    .bluecell {
+        color: rgb(111, 204, 234); /* Electric Blue */
+    }
+
+/**/
+
+/* Documentation */
+    .documentation {
+        color: rgb(0, 205, 159);
+    }
+/**/
+
+
+/* Misc */
+.context-menu-selected {
+    background: lightgrey;
+}
+/**/
+
+/* Popover background color override */
+.popover {
+	background-color: rgba(15,21,37,1.0);
+}
+

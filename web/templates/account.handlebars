@@ -1,0 +1,59 @@
+
+<div class="list-group">
+    <div class="list-group-item" style="height:60px;">
+        <label> Username </label>
+        {{username}}
+    </div>
+
+{{!--
+    {{#if isAdmin}}
+        <div class="list-group-item">
+            <label style="float:left;"> Subset by Query <small>(Admin Only -- Use at your own risk)</small> </label>
+            <span style="float:right;">
+                {{view App.ToggleSwitch checkedBinding="use_query"}}
+            </span>
+            <div id="editor" style="clear:both;"></div>
+        </div>
+    {{/if}}
+--}}
+
+    <div class="list-group-item" style="height:60px;">
+        <label style="float:left;"> Exact Location Name Matches Only </label>
+        <span style="float:right;">
+            {{view App.ToggleSwitch checkedBinding="exact_geoname"}}
+        </span>
+    </div>
+    
+    <div class="list-group-item" style="height:60px;">
+        <label style="float:left;"> Time Series Resolution </label>
+        <div class="gf-select-menu" style="width:50%; float:right;">
+            {{select-component
+                id               = 'ts-resolution-select'
+                contentBinding   = "ts_resolution_options"
+                prompt           = " - Set Time Series Resolution - "
+                selectionBinding = "ts_resolution"
+                optionLabelPath  = "label"
+                optionValuePath  = "value"
+            }}
+        </div>
+    </div>
+
+    <div class="list-group-item">
+        <label> Speed/Accuracy Tradeoff </label>
+        <p> Higher values indicate higher precision and slower performance </p>
+
+        <b> City Precision</b>
+        {{#if accuracies.city}} {{accuracies.city}} {{else}} Infinite {{/if}}
+        <div id="city-slider" class="slider-precision"></div>
+
+        <b> Branch Precision</b>
+        {{#if accuracies.branch}} {{accuracies.branch}} {{else}} Infinite {{/if}}
+        <div id="branch-slider" class="slider-precision"></div>
+        
+        <b> Subject Precision </b>
+        {{#if accuracies.subject}} {{accuracies.subject}} {{else}} Infinite {{/if}}
+        <div id="subject-slider" class="slider-precision"></div>
+    </div>
+
+</div>
+

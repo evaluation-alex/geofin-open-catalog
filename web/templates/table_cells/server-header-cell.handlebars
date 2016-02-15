@@ -1,0 +1,12 @@
+<div class="ember-table-content-container" {{action "sortByColumn" view.content}}>
+    {{#if view.sortingOn}}
+        {{#if view.reversed}}
+            <i class="fa fa-angle-up pull-right" style="padding-top:.6em; padding-right:.6em; color: rgb(149, 149, 149);"></i>
+        {{else}}
+            <i class="fa fa-angle-down pull-right" style="padding-top:.6em; padding-right:.6em; color: rgb(149, 149, 149);"></i>
+        {{/if}}
+    {{/if}}
+  <span class="ember-table-content">
+    {{view.content.headerCellName}}
+  </span>
+</div>

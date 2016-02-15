@@ -1,0 +1,34 @@
+
+<h4 class="sidebar-table-header"> Global Activity </h4>
+
+<div class="row control-panel">
+    <div class="col-xs-6 gf-select-menu">
+        {{
+            multi-select-component
+            contentBinding    = "controllers.main.metric_type_options"
+            prompt            = " - Select metrics - "
+            optionLabelPath   = "label"
+            optionValuePath   = "val"
+            selectionsBinding = "active_columns"
+        }}
+    </div>
+    <div class="col-xs-4">
+        <button class="btn btn-sidebar" {{action "export_data"}}>
+            Export
+        </button>
+    </div>
+</div>
+
+{{#if table_data}}
+    <div class="table-container" id="global-table">
+        {{table-component
+            hasFooter        = false
+            columnsBinding   = "table_columns"
+            contentBinding   = "table_data"
+            forceFillColumns = true}}
+    </div>
+{{else}}
+    <h4 class="sidebar-table-header">
+        {{#if client.loading}} Loading... {{else}} No Selection or No Data {{/if}}
+    </h4>
+{{/if}}

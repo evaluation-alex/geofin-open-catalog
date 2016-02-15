@@ -1,0 +1,37 @@
+
+<h4 class="sidebar-table-header"> Activity by City </h4>
+
+<div class="row-fluid control-panel">
+    <div class="col-xs-4">
+        <label> Show Cities on Map </label>
+        {{view App.ToggleSwitch checkedBinding="visible"}}
+    </div>
+    <div class="col-xs-4">
+        <button class="btn btn-sidebar" {{action "export_data"}}>
+            Export
+        </button>
+    </div>
+</div>
+
+{{#if table_data}}
+    {{#if eub}}
+        <span style="color:red;text-align:right;"> Values accurate &plusmn; {{eub}} </span>
+    {{/if}}
+    <div class="table-container" id="pp-table" style="overflow: visible !important;">
+        {{
+            table-component
+            hasFooter        = false
+            forceFillColumns = true
+            columnsBinding   = "table_columns"
+            contentBinding   = "table_data"
+            onClick          = table_onClick
+            onMouseEnter     = table_onMouseEnter
+            onMouseLeave     = table_onMouseLeave
+            con              = controller
+        }}
+    </div>
+{{else}}
+    <h4 class="sidebar-table-header">
+        {{#if client.loading}} Loading... {{else}} No Selection or No Data {{/if}}
+    </h4>
+{{/if}}

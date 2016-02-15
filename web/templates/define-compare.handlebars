@@ -1,0 +1,73 @@
+<div class="row-fluid" style="clear:both;">
+    <div class="col-xs-6">
+        <div class="list-group">
+            <div class="list-group-header">
+                <h4> Create Custom Comparison </h4>
+            </div>
+            <div class="list-group-item">
+                <button class="btn btn-primary" {{action "persist_comparison"}}">
+                    Persist Current State
+                </button>
+            </div>
+
+            <div class="list-group-item">
+                <div class="accordion" id="norm_accordion">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#norm_accordion" href="#targ2">
+                                <center> Settings </center>
+                            </a>
+                        </div>
+                        <div id="targ2" class="accordion-body collapse out">
+                            <div class="row" style="margin-top:5px; margin-bottom:15px;">
+                                <div class="col-xs-4" style="text-align:center">
+                                    <label> Fixed Time Window </label>
+                                    {{view App.ToggleSwitch checkedBinding="fix_time"}}
+                                </div>
+
+                                <div class="col-xs-4" style="text-align:center">
+                                    <label> Fixed Form Types </label>
+                                    {{view App.ToggleSwitch checkedBinding="fix_forms"}}
+                                </div>
+
+                                <div class="col-xs-4" style="text-align:center">
+                                    <label> Fixed Metric </label>
+                                    {{view App.ToggleSwitch checkedBinding="fix_metric"}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xs-6">
+        <div class="list-group">
+            <div class="list-group-header">
+                <h4> Manage Custom Comparisons </h4>
+            </div>
+            {{#each norm_type_options}}
+                <li class="list-group-item" style="padding-top:10px;">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div>
+                                {{input value=this.label placeholder = " - "}}
+                            </div>
+                            <div>
+                                {{input value=this.desc placeholder = "Enter Description"}}
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-offset-4">
+                            <button class="btn btn-remove" {{action "remove_norm_type_option" this}}>
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            {{/each}}
+        </div>
+    </div>
+</div>
+

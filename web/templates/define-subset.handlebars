@@ -1,0 +1,83 @@
+<div class="row-fluid" style="clear:both;">
+    <div class="col-xs-6">
+        <div class="list-group">
+            <div class="list-group-header">
+                <h4> Create Custom Subset </h4>
+            </div>
+
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-6">
+                        {{
+                            input
+                            class          = "input-subset"
+                            value          = subset_query
+                            placeholder    = " - Enter Query - "
+                           insert-newline = "add_subset_query"
+                        }}
+                    </div>
+                </div>
+            </div>
+            <div class="list-group-item">
+
+                <div class="accordion" id="subset_accordion">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#subset_accordion" href="#targ1">
+                                <center> Build Complex Query </center>
+                            </a>
+                        </div>
+                        <div id="targ1" class="accordion-body collapse out">
+                            <div class="accordion-inner">
+                                <div id="editor" style="clear:both;"> </div>
+                                    <div class="accordion" id="mapping_accordion">
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#mapping_accordion" href="#targ2" {{action "show_mapping"}}">
+                                                    <center> View Data Mapping Details </center>
+                                                </a>
+                                            </div>
+                                            <div id="targ2" class="accordion-body collapse out">
+                                                <div class="accordion-inner">
+                                                    <div id="mapping-viewer" style="clear:both;"> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <button class="btn btn-primary" {{action "add_complex_subset_query"}}>
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="list-group">
+            <div class="list-group-header">
+                <h4> Manage Custom Subsets </h4>
+            </div>
+            {{#each subset_options}}
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            {{input value=this.label}}
+                        </div>
+                        <div class="col-xs-5">
+                            {{this.def.query}}
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-remove" {{action "remove_option" this 'subset_options'}}>
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            {{/each}}
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,101 @@
+<div class="row-fluid" style="clear:both;">
+{{!--     <div class="col-xs-6">
+        <div class="list-group">
+            <div class="list-group-header">
+                <h4> Create Custom Metric </h4>
+            </div>
+            <div class="list-group-item gf-select-menu list-item-select-menu" style="height: 75px;">
+                <span class='pull-left' style="color:grey;"> Which form types do we care about? (Should allow more than one) </span>
+                {{multi-select-component
+                    id                = "select-add-column-form-type"
+                    contentBinding    = "form_type_options"
+                    prompt            = " - Select a form type - "
+                    optionLabelPath   = "form_type"
+                    optionValuePath   = "form_type"
+                    
+                    selectionsBinding = "form_type_selections"
+                }}
+            </div>
+            {{#if form_type_selections}}
+                <div class="list-group-item gf-select-menu list-item-select-menu" style="height: 75px;">
+                    <span class='pull-left' style="color:grey;"> How do we assign location to a report? </span>
+                    {{multi-select-component
+                        id               = "select-add-column-locus-actors"
+                        contentBinding   = "locus_actor_options"
+                        prompt           = " - Select a party - "
+                        optionLabelPath  = "locus_actor"
+                        optionValuePath  = "locus_actor"
+                        
+                        selectionsBinding = "locus_actor_selections"
+                    }}
+                </div>
+                
+                {{#if locus_actor_selections}}
+                    <div class="list-group-item gf-select-menu list-item-select-menu" style="height: 75px;">
+                        <span class='pull-left' style="color:grey;"> What fields do we care about? </span>
+                        {{select-component
+                            id               = "select-add-column-form-type-field"
+                            contentBinding   = "field_options"
+                            prompt           = " - Select a field - "
+                            optionLabelPath  = "field"
+                            optionValuePath  = "field"
+                            selectionBinding = "field_selection"
+                        }}
+                    </div>
+                    
+                    {{#if field_selection}}
+                        <div class="list-group-item gf-select-menu list-item-select-menu" style="height: 75px;">
+                            <span class='pull-left' style="color:grey;"> How do we want to measure the field? </span>
+                            {{select-component
+                                id               = "select-add-column-statistic_type"
+                                contentBinding   = "statistic_options"
+                                prompt           = " - Select a Measure - "
+                                optionLabelPath  = "label"
+                                optionValuePath  = "value"
+                                selectionBinding = "statistic"
+                            }}
+                        </div>
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+
+            <div class="list-group-item">
+                {{#if statistic}}
+                    <button class="btn btn-primary" {{action "add_metric"}} style="width: 100%;">
+                        Add
+                    </button>
+                {{else}}
+                    <span style="color:grey;"> Finish making selections... </span>
+                {{/if}}
+            </div>
+        </div>
+    </div> --}}
+    <div class="col-xs-6">
+        <div class="list-group">
+            <div class="list-group-header">
+                <h4> Manage Custom Metrics </h4>
+            </div>
+{{!--             {{#each metric_type_options}}
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div>
+                                {{input value=this.label placeholder = " - "}}
+                            </div>
+                            <div>
+                                {{input value=this.desc placeholder = "Enter Description"}}
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            {{view "App.MetricDefinitionView" pre_def=this.pre_def}}
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-remove" {{action "remove_option" this 'metric_type_options'}}>
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                </li>
+            {{/each}}
+ --}}        </div>
+    </div>
+</div>

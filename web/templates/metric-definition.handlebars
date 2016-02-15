@@ -1,0 +1,21 @@
+        {{#if view.special}}
+            <i class="metric-property"> Specially defined </i>
+        {{else}}
+            {{#if view.explicit}}
+                <i class="metric-property"> Explicitly defined </i>
+                <br>
+                {{stringify view.def.content}}
+            {{else}}
+                <span class="metric-definition"> For </span>
+                <span class="metric-property"> {{view.pre_def.content.form_types}},</span> <br>
+                
+                <span class="metric-definition"> </span>
+                <span class="metric-property"> {{view.pre_def.content.statistic}} </span>
+                <span class="metric-definition"> of </span>
+                <span class="metric-property"> {{view.pre_def.content.field}} </span> <br>
+                
+                <span class="metric-definition"> Loc. from </span>
+                <span class="metric-property"> {{view.pre_def.content.locus_actors}} </span>
+            {{/if}}
+        {{/if}}
+

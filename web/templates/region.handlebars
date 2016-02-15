@@ -1,0 +1,38 @@
+
+{{outlet}}
+<div class="control-header-wrapper">
+    <h4 class="sidebar-table-header"> Activity by Region </h4>
+    <div class="row control-panel">
+        <div class="col-xs-4">
+            <label> Show Regions on Map </label>
+            {{view App.ToggleSwitch checkedBinding="visible"}}
+        </div>
+
+        <div class="col-xs-4">
+            <button id="show-reports" class="btn btn-sidebar" {{action "run_selected_reports"}}>
+                View Reports
+            </button>
+        </div>
+    </div>
+</div>
+
+{{#if table_data}}
+    <div class="table-container" id="fin-table">
+        {{
+            financial-table
+            hasHeader        = true
+            hasFooter        = false
+            forceFillColumns = true
+            numFixedColumns  = 0
+            rowHeight        = 35
+            contentBinding   = "table_data"
+            columnsBinding   = "table_columns"
+            con              = controller
+        }}
+    </div>
+{{else}}
+    <h4 class="sidebar-table-header">
+        {{#if client.loading}} Loading... {{else}} No Selection or No Data {{/if}}
+    </h4>
+{{/if}}
+

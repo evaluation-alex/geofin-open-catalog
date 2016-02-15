@@ -1,0 +1,22 @@
+
+<div id="login-wrapper">
+    {{#if session.isAuthenticated}}
+        <a {{action 'invalidateSession'}} id="btn-logout" class="btn btn-primary navbar-btn navbar-right">
+            <i class="fa fa-close"></i>
+        </a>
+        <br>
+        <a {{action 'accountSettings'}} id="btn-account-settings"
+            {{bind-attr class=":btn :btn-primary :navbar-btn :navbar-right controllers.main.state.user_query.def:has-user-query"}}>
+            <i class="fa fa-plug"></i>
+        </a>
+    {{/if}}
+</div>
+
+{{outlet}}
+
+{{#if isAdmin}}
+    <div id="global-dropzone"  {{bind-attr class=":dropzone showDropZone:visible"}}></div>
+    <div id="subject-dropzone" {{bind-attr class=":dropzone showDropZone:visible"}}></div>
+{{else}}
+    <div id="no-permission-dropzone" {{bind-attr class=":dropzone showDropZone:visible"}}></div>
+{{/if}}

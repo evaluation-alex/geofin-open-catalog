@@ -1,0 +1,19 @@
+<div class="row-fluid">
+    <ul {{bind-attr class=":nav :nav-tabs :nav-tabs-sidebar client.loading:loading"}}>
+        <li> {{#link-to "global"}} Global {{/link-to}} </li>
+        <li> {{#link-to "region"}} Regions {{/link-to}} </li>
+        <li> {{#link-to "city"}} Cities {{/link-to}} </li>
+        {{!-- <li> {{#link-to "branch"}} Branches {{/link-to}} </li> --}}
+        <li> {{#link-to "subject"}} Subjects {{/link-to}} </li>
+
+{{!--            <li> {{#link-to "morelikethis"}} Similar Regions {{/link-to}} </li> --}}
+{{!--            <li> {{#link-to "profiler"}} Profiler {{/link-to}} </li>            --}}
+{{!--            <li> {{#link-to "aps"}} Ass. Places {{/link-to}} </li>              --}}
+{{!--            <li> {{#link-to "transfers"}} Transfers {{/link-to}} </li>          --}}
+
+    </ul>
+
+    <div class="tab-content tab-content-sidebar col-xs-12">
+        {{outlet}}
+    </div>
+</div>

@@ -1,0 +1,79 @@
+        <div class="row-fluid">
+            <div class="col-xs-12">
+                <span style="color:red;"> {{model.pretty_subset}} </span>
+                <div class="profile list-group">
+                    <div class="list-group-header">
+                        <div class="gf-select-menu">
+                            {{gf-select
+                                prompt           = " - Select FTF -"
+                                contentBinding   = "model.form_type_fields"
+                                selectionBinding = "model.profile_field"
+                                optionLabelPath  = "field"
+                                optionValuePath  = "field"
+                            }}
+                        </div>
+                        <div>
+                            <label>
+                                Significant Terms
+                            </label>
+                            {{view App.ToggleSwitch checkedBinding="profile_type_sig"}}
+                        </div>
+                    </div>
+                    
+                    {{#if model.data}}
+                        {{#each m in model.data}}
+                            <div class="list-group-item">
+                                <a {{action select_item m}} class="profile-key">
+                                    Field <b>{{model.profile_field.field}}</b> = <b>{{m.key}}</b>
+                                    {{m.count}} times in this subset.
+                                </a>
+                                {{#if profile_type_sig}}
+                                    <br>
+                                    This is anomolous because <b>{{model.profile_field.field}}</b> = <b>{{m.key}}</b>
+                                    only appears in
+                                    the background {{m.bg_count}} times.
+                                    <span class="profile-score">
+                                        (Score: {{m.score}})
+                                    </span>
+                                    <br>
+                                    The subset is
+                                    <br> <i> form_types </i>
+                                    <br> <i> time range </i>
+                                    <br> <i> location </i>
+                                    {{#if model.subset}}
+                                        {{#each p in model.subset}}
+                                            <br> <i> {{p.field.field}} = {{p.key}} </i>
+                                        {{/each}}
+                                    {{/if}}
+                                    
+                                    <br>
+                                    The background is
+                                    <br> <i> form_types </i>
+                                    <br> <i> time range </i>
+                                    {{#if model.subset}}
+                                        <br> <i> location </i>
+                                        {{#each p in model.parents}}
+                                            <br> <i> {{p.field.field}} = {{p.key}} </i>
+                                        {{/each}}
+                                    {{/if}}
+                                {{/if}}
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        ... No data ...
+                    {{/if}}
+                </div>
+                
+                {{#if loading}}
+                    <span style="color:red">
+                        Loading...
+                    </span>
+                {{/if}}
+            </div>
+        </div>
+        
+        {{#if child_data}}
+            <hr>
+            {{render "Pwidget" child_data}}
+        {{/if}}
+

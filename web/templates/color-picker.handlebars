@@ -1,0 +1,29 @@
+
+Select colors for the legend. Click `Done` to apply changes.
+
+<br />
+<hr />
+
+<div class="row center">
+  <button class="btn btn-default col-md-1" {{action "numColors" "less" target=view}}> - </button>
+  <div class="container col-md-10 ">
+    {{#each c in colors}}
+     	<p class="col-md-2"> {{input type="text" class="basic" style="color:inherit;" valueBinding="c.value"}} </p>
+    {{/each}}
+  </div>
+  <button class="btn btn-default col-md-1" {{action "numColors" "more" target=view}}> + </button>
+</div>
+
+<hr />
+Choose the number of steps for the legend's gradient.
+
+<br>
+<br>
+<!--<div class="container col-md-12 text-center"">
+  {{input id="SliderSingle" type="slider" name="Gradient" value=n_steps}}
+</div>-->
+
+<div class="container col-md-12 text-center">
+{{n_steps}}
+<div id="color-slider" class="slider-precision"></div><br>
+<br>

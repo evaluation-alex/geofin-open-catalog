@@ -1,0 +1,109 @@
+
+{
+    // Server location
+    "NODE_PORT"      : 8085,      // Port node server is served from
+    "LISTEN_ADDRESS" : "0.0.0.0", // Address serevr binds to
+    "NODE_PATH"      : "",        // Prefix for REST endpoints (useful if running through proxy)
+    
+    // Security settings
+    "HTTPS" : {
+        "ENABLED" : false,
+        
+        "CERTIFICATES" : {
+            "PEM" : "authentication/geofin.pem", // Certificate files for https
+            "CRT" : "authentication/geofin.crt"  // ^^
+        }
+    },
+
+    // Authentication settings
+    "AUTHENTICATION" : {
+        "ENABLED"  : true,
+
+        "TOKEN_SECRET" : "i am a fake token secret", // *** TO BE CHANGED BY USER ***
+        
+        // Authentication method
+        // local : checks credentials against Elasticsearch instance
+        // ldap  : checks credentials against LDAP instance
+        // gated : gets username from plain-text cookie/headers, assuming all traffic is authenticated
+        "STRATEGY" : "local",
+        
+        "LDAP_OPTS" : {
+            // Sample LDAP configuration that hits an online test server
+            "server" : { 
+                "url"             : "ldap://ldap.forumsys.com:389",
+                "bindDn"          : "cn=read-only-admin,dc=example,dc=com",
+                "bindCredentials" : "password",
+                "searchBase"      : "dc=example,dc=com",
+                "searchFilter"    : "(uid={{username}})"
+            }
+        },
+        
+        "GATED_OPTS" : {
+            "name"     : "oam_remote_user", // Name of credentials field
+            "location" : "headers"          // How are credentials passed? ({'headers', 'cookies'})
+        }
+    },
+    
+    // Logging settings
+    "LOGGING" : {
+        "ENABLED"  : true,
+        "VERBOSE"  : true,
+        "PATH"     : "/tmp/", // Path to logging directory
+        "INTERVAL" : "day"    // Log file intervals ({minute, hour, day})
+    },
+    
+    // Map server settings
+    "TILE_IP"  : "-tiles/{z}/{x}/{y}.png",
+    "TILE_TMP" : true,
+
+    // Pointers to Elasticsearch data store
+    "ELASTICSEARCH" : {
+        "IP" : "http://10.1.70.235:9200/", // Address of Elasticsearch instance
+        
+        // Names of elasticsearch indices
+        "INDEX" : {
+            "DATA"     : "data",
+            "CACHE"    : "geocache",
+            
+            "AUGMENT"  : "augment",
+            "GEO"      : "geo",
+            "LOOKUP"   : "geo_lookup",
+            "AUTH"     : "",
+
+            "DDDEMO"   : "dddemo_index" // DEMO -- Ignore unless you run in DEMO mode
+        }
+    },
+    
+    // Path to Graphene for report viewing (null is disabled)
+    "GRAPHENE_URL_BASE" : null,
+        
+    // -- Can ignore everything below this line (unless you know what you're doing) --    
+    "DEMO_FLAG"      : true,
+    "TESTING"        : true,
+    "TESTING_DOMAIN" : "http://localhost:8085/",
+        
+    // Locations of project files (relative to $PROJECT_ROOT/config)
+    "FILEPATHS" : { 
+      "NODE"      : "../server/node/",            
+      "CLIENT"    : "../web/",                      
+      "LOADING"   : "../loading_scripts/",
+      "MAP_TILES" : "../server/data/map-tiles/test-dark.mbtiles"
+    },
+    
+    // Dataset specific settings
+    "FIELDS" : {
+        "DATE"         : "DETAILS.date_filed",
+        "PP_TERMS"     : "best.id",
+        "BRANCH_TERMS" : "best.id.cat",
+        "SUBJECT_ID"   : "SUBJECTS.subject_id.identification_number.cat",
+        "DOC_ID"       : "DETAILS.current_identifier"
+    },
+    "ES_NESTED_PATH"      : "gfloc.",
+    "ES_NESTED_PATH_BANK" : "gfbranch.",
+    "LOCUS_ACTOR_OPTIONS" : ["subject", "fin_inst", "fil_inst", "fin_inst_branch"],
+    "ER_THRESH" : {
+        "gfloc"    : 3,
+        "gfbank"   : 800,
+        "gfbranch" : 800
+    }
+}

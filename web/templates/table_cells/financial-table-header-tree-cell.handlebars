@@ -1,0 +1,13 @@
+
+<div class="ember-table-cell-container">
+  <span {{bind-attr class=":ember-table-toggle-span :ember-table-toggle isCollapsed:ember-table-expand:ember-table-collapse"}}
+      {{action "toggleTableCollapse"}}>
+    {{#if isCollapsed}} &#9654; {{else}} &#9660; {{/if}}
+  </span>
+  <div class="ember-table-header-content-container">
+    <span class="ember-table-content">
+      {{view.column.headerCellName}}
+    </span>
+  </div>
+</div>
+

@@ -1,0 +1,179 @@
+// Client developer
+{
+    "DEMO_SETTINGS" : {
+        "SLIDER_LOWER_LIMIT"        : "2014-02-15",
+        "SLIDER_UPPER_LIMIT"        : "2015-02-15",
+        "DEFAULT_SLIDER_START_DATE" : "2014-07-15",
+        "DEFAULT_SLIDER_END_DATE"   : "2015-02-15",
+        "DEFAULT_BORDER_TYPE"       : 1,
+        "SUBJECT_GEO_TYPE"          : "line"
+    },
+    
+    /* Path when no region is selected */
+    "DEFAULT_PATH" : "-",
+    
+    /* Map Style Settings */
+    "DEFAULT_N_STEPS" : 8,
+    
+    /* Resolutions of time series spark cell */
+    "DEFAULT_TS_RESOLUTION" : 1,
+    "TS_RESOLUTION_OPTIONS" : [
+        { "label" : "Days"   , "value" : "day"   },
+        { "label" : "Weeks"  , "value" : "week"  },
+        { "label" : "Months" , "value" : "month" },
+        { "label" : "Years"  , "value" : "year"  }
+    ],
+    
+    "DEFAULT_ACCURACIES" : {
+        "city"    : 2,
+        "branch"  : 2,
+        "subject" : 2
+    },
+    
+    // <Subset-metric-compare>
+        "DEFAULT_SUBSET" : 0,
+        "SUBSET_OPTIONS" : [
+            {
+                "label"    : "None",
+                "value"    : "none",
+                "pre_def"  : null
+            }
+        ],
+
+        "DEFAULT_NORM_TYPE" : 0,
+        "NORM_TYPE_OPTIONS" : [
+            {
+                "label"    : "None",
+                "value"    : "none",
+                "pre_def"  : null
+            }
+        ],
+
+        "DEFAULT_METRIC_TYPE" : 0,
+        "METRIC_TYPE_OPTIONS" : [
+            {
+                "label" : "Count",
+                "value" : "count",
+                "desc"  : "Total # of reports",
+                "pre_def" : {
+                    "type"    : "special",
+                    "content" : {
+                        "id" : "count"
+                    }
+                }
+            },
+            {
+                "label" : "Dollar Value",
+                "value" : "amount",
+                "desc"  : "Total dollar value of reports",
+                "pre_def"  : {
+                    "type"    : "special",
+                    "content" : {
+                        "id" : "amount"
+                    }
+                }
+            }
+        ],
+    
+        "ALL_STATISTIC_OPTIONS" : {
+            "number" : [
+                {"value" : "sum", "label" : "Sum"},
+                {"value" : "avg", "label" : "Mean"},
+                {"value" : "max", "label" : "Max"},
+                {"value" : "min", "label" : "Min"},
+                {"value" : "cardinality", "label" : "Cardinality" }
+            ],
+            "string" : [
+                { "value" : "cardinality", "label" : "Cardinality" },
+                { "value" : "value_count", "label" : "Value Count" }
+            ]
+        },
+        // </metric>
+    // </SMC>
+    
+    
+    /* Options for borders displayed as overlays on the map */
+    "DEFAULT_BORDER_TYPE" : 0,
+    "BORDER_TYPE_OPTIONS" : [
+        {"label" : "World",  "value" : "world"},
+        {"label" : "US State", "value" : "state"}
+    ],
+
+    /* Sparkcell styling */
+    "SPARKCELL_INTER_BAR_PADDING" : 0.25,
+    "SPARKCELL_ABOVE_BAR_PADDING" : 0.025,
+    "SPARKCELL_TS_COLOR"         : "rgb(255, 0, 0)",
+    "SPARKCELL_TS_HOVER_COLOR"   : "rgb(168, 168, 168)",
+    "SPARKCELL_HIST_COLOR"       : "rgb(168, 168, 168)",
+    "SPARKCELL_HIST_HOVER_COLOR" : "rgb(255, 0, 0)",
+
+    /* Date Slider Settings */
+    "SLIDER_LOWER_LIMIT"        : "2000-01-01",
+    "SLIDER_UPPER_LIMIT"        : "2014-12-01",
+    "DEFAULT_SLIDER_START_DATE" : "2013-11-01",
+    "DEFAULT_SLIDER_END_DATE"   : "2014-11-01",
+
+    "SLIDER_STEP_IN_MONTHS"		: 1,
+    
+    /* Rounding Numbers */
+    "NICE_FORMAT_THRESH" : 10000,
+    
+    /* Width of snapper as proportion of whole page */
+    "SNAPPER_WIDTH" : 0.4,
+    
+    /* Default content in query builder */
+    "DEFAULT_ACE_CONTENT" : {"match" : {"_all" : "test query"}},
+    
+    /* Whether we use entity resolution by default */
+    "DEFAULT_EXACT_GEONAME" : false,
+        
+    /* Path to geo information in raw_index */
+    "ES_NESTED_PATH"  : "gfloc.",
+    
+    /* Default panel in snapper on region click*/
+    "DEFAULT_GFPANEL" : "region",
+    
+    /* Maximum number of reports that can be dumped at a time */
+    "MAX_EXPORT_REPORTS" : 1000,
+    
+    /* Config file for leaflet map */
+    /* If the map appears garbled, you may need to change `tms` to false */
+    "LEAFLET_CONFIG" : {
+        "subdomains"    : "1234",
+        "type"          : "sat",
+        "maxNativeZoom" : 15,
+        "maxZoom"       : 15,
+        "attribution"   : "Leaflet/OSM/Marble/Phronesis",
+        "tms"           : true,
+        "noWrap"        : false
+    },
+    
+    /* Enables testing mode */
+    /* We can leave this on true all the time, because it"s overridden in index.html */
+    "TESTING" : true,
+    
+    "USE_JSON_SHAPEFILES" : true,
+
+    "SUBJECT_GEO_TYPE" : "point",
+    "SUBJECT_GEOPOINT_COLORS" : {
+        "subject"         : "lime",
+        "fin_inst"        : "blue",
+        "fil_inst"        : "grey",
+        "fin_inst_branch" : "lightblue"
+    },
+    
+    // Controls how the map center gets offset
+    // when the map is shrunk
+    "OFFSET_CONSTANT" : 0.15,
+    
+    "REGION_BASE_OPACITY"   : 0.35,
+    "DEFAULT_REGION_COLORS" : ["white", "yellow", "red"],
+
+    "REGION_BORDER_COLOR" : "grey",
+    
+    "SUBJECT_LINE_WEIGHT"  : 2,
+    "SUBJECT_LINE_OPACITY" : 0.8,
+    
+    "DEFAULT_CITY_COLORS"  : ["white", "yellow", "gold"]
+}
+

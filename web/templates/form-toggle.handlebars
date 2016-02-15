@@ -1,0 +1,8 @@
+
+<li class="li-form-toggle">
+    <a class="form-select-link" {{action "toggle_form" f}}
+        {{bind-attr id=f.form_type}}
+        {{bind-attr class="f.toggled::inactive-form-type"}}>
+            {{view.form_type_label}}
+    </a>
+</li>

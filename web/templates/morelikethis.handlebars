@@ -1,0 +1,19 @@
+
+<h4 class="sidebar-table-header"> Similar Regions </h4>
+{{#if table_data}}
+    <div class="table-container" id="more-like-this-table">
+        {{
+            table-component
+            hasFooter        = false
+            forceFillColumns = true
+            contentBinding   = "table_data"
+            columnsBinding   = "table_columns"
+            con              = controller
+        }}
+    </div>
+{{else}}
+    <h4 class="sidebar-table-header">
+        {{#if client.loading}} Loading... {{else}} No Selection or No Data {{/if}}
+    </h4>
+{{/if}}
+

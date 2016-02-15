@@ -1,0 +1,12 @@
+
+<div class="chart-wrapper col-sm-6"
+ style="width:50%; background-color:rgb(240,240,240); \
+        color:black; padding:10px; z-index:999;">
+    <h2 style="padding-left:5%;"> {{view.title}} </h2>
+    <div class="chart-container" style="width:100%;">
+        {{time-series-chart
+            lineData=view.data
+            selectedSeedColor="rgb(140, 202, 197)"}}
+    </div>
+</div>
+

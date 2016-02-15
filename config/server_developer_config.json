@@ -1,0 +1,34 @@
+{    
+    
+    "PCT_CORES" : 0.5, // Percentage of machine"s cores the Node.js server should run on.
+
+    "USE_CACHE"    : false, // true -> use the cache, false -> compute all queries on the fly
+    "CACHED_PATHS" : ["fetch_global", "fetch_locus", "fetch_populated_places"],
+    
+    "LOGGING_OBJECT" : "yaml", // type of logging JSON v. YAML
+    
+    // Parameters for kicking a user off
+    "CLEAR_USERS_ON_RESTART" : false, // kick users off after restarting the server?
+    "TIMEOUT_AMOUNT"         : 2,
+    "TIMEOUT_UNITS"          : "hours",
+    "TIMEOUT_WARNING_WINDOW" : 1800000, // 30 minutes,
+
+    "DEFAULT_BLACKLIST_TYPES" : [], 
+    "DEFAULT_LOCUS_ACTOR"     : "subject",
+    
+    "SHAPEFILE_TYPE" : "json",
+
+    // -- can ignore everything below this line (unless you know what you're doing) --
+    "VERIFY" : false,  // true -> run all queries through both cache and fly
+    "DEMO_SETTINGS" : {
+        "DEFAULT_LOCUS_ACTOR" : "subject"
+    },
+
+    "MAX_QUERY_SIZE" : 100000,
+    "AMOUNT_PREFIX"  : "amount__",
+    "GEOJITTER_SIZE" : 0,
+    
+    "TOTAL_AMOUNT_KEYS" : {
+        "default" : "gfamnt.total_amount"
+    }
+}

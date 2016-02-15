@@ -1,0 +1,1169 @@
+.ace_editor {
+    height     : 200px;
+    margin-top : 20px;
+}
+#ace-wrapper {
+    border     : 1px solid darkgrey;
+    padding    : 15px;
+    margin     : 3px;
+    margin-top : 30px;
+}
+
+html, body {
+    height    : 100px;
+    max-width : 100%;
+}
+
+body {
+    padding          : 0;
+    margin           : 0;
+    background-color : rgba(15, 21, 37, 0.8);
+}
+
+#map {
+    height     : 100%;
+    max-height : 100%;
+    width      : 100%;
+    max-width  : 100%;
+}
+
+.small-content {
+    width : 60%;
+}
+
+.invisible {
+    display : none;
+}
+
+#global-dropzone {
+    background : none repeat scroll 0 0 grey;
+    height     : 0px;
+    width      : 50%;
+    position   : fixed;
+    top        : 0;
+    left       : 0;
+    z-index    : 10001;
+    opacity    : 0;
+    -webkit-transition : opacity 0.2s ease-in-out;
+    -moz-transition    :  opacity 0.2s ease-in-out;
+    -o-transition      :  opacity 0.2s ease-in-out;
+    transition         :  opacity 0.2s ease-in-out;
+    h2 {
+        display     : block;
+        position    : fixed;
+        top         : 50%;
+        left        : 0%;
+        right       : 50%;
+        color       : #fff;
+        line-height : 50px;
+        font-size   : 45pt;
+        z-index     : -1;
+        text-shadow : 3px 3px 4px #000;
+        font-weight : 350;
+    }
+}
+
+#subject-dropzone {
+    background : none repeat scroll 0 0 red;
+    height     : 0px;
+    width      : 50%;
+    position   : fixed;
+    top        : 0;
+    left       : 50%;
+    z-index    : 10001;
+    opacity    : 0;
+    -webkit-transition : opacity 0.2s ease-in-out;
+    -moz-transition    : opacity 0.2s ease-in-out;
+    -o-transition      : opacity 0.2s ease-in-out;
+    transition         : opacity 0.2s ease-in-out;
+    h2 {
+        display     : block;
+        position    : fixed;
+        top         : 50%;
+        left        : 50%;
+        right       : 0%;
+        color       : #fff;
+        line-height : 50px;
+        font-size   : 45pt;
+        z-index     : -1;
+        text-shadow : 3px 3px 4px #000;
+        font-weight : 350;
+    }
+}
+
+#no-permission-dropzone {
+    background : none repeat scroll 0 0 black;
+    height     : 0px;
+    width      : 100%;
+    position   : fixed;
+    top        : 0;
+    left       : 0;
+    z-index    : 10001;
+    opacity    : 0;
+    -webkit-transition : opacity 0.2s ease-in-out;
+    -moz-transition    :  opacity 0.2s ease-in-out;
+    -o-transition      :  opacity 0.2s ease-in-out;
+    transition         :  opacity 0.2s ease-in-out;
+}
+
+#global-dropzone.visible {
+    height  : 100%;
+    opacity : 0.8;
+}
+
+#subject-dropzone.visible {
+    height  : 100%;
+    opacity : 0.8;
+}
+
+#no-permission-dropzone.visible {
+    height  : 100%;
+    opacity : 0.8;
+}
+
+.snap-content {
+    background: #131725;
+}
+
+.snap-drawers {
+    background: #131725;
+}
+
+.snap-drawer {
+    background: #131725;
+    width: auto;
+}
+
+.splash-header {
+    text-align : center;
+    color      : white;
+}
+
+#login-wrapper {
+    z-index  : 999;
+    height   : 54px;
+    position : absolute;
+    top      : 0px;
+    right    : 10px;
+    .btn {
+        padding       : 0px;
+        padding-left  : 3px;
+        padding-right : 3px;
+        margin        : 0px;
+        border-radius : 0px;
+        height        : 50%;
+        width         : 17px;
+    }
+}
+
+#btn-logout {
+    background : none;
+    color      : red;
+    border     : none;
+    cursor     : pointer;
+}
+
+#btn-account-settings {
+background : none;
+    color      : lime;
+    border     : none;
+    cursor     : pointer;
+}
+
+#btn-account-settings.has-user-query {
+    background : rgb(140, 202, 197);
+    color      : white;
+}
+
+.slider-precision {
+    background    : none;
+    margin-top    : 5px;
+    margin-bottom : 10px;
+}
+
+#login-form {
+    position      : absolute;
+    top           : 20%;
+    border        : 1px solid #ccc;
+    color         : white;
+    padding       : 56px;
+    padding-top   : 0px;
+    border-radius : 10px;
+    width         : 50%;
+    margin-left   : 25%;
+    h1 {
+        font-size : 3em;
+    }
+    label {
+        color : rgb(140, 202, 197);
+    }
+    input {
+        background : rgb(140, 202, 197);
+        border     : none;
+        color      : white;
+        text-align : center;
+    }
+    button {
+        width      : 100%;
+        background : none;
+        color      : white;
+    }
+}
+
+.alert-danger-login {
+    text-align   : center;
+    color        : red;
+    background   : none;
+    border-color : red;
+    font-size    : 1.25em;
+    position     : absolute;
+    left         : 25%;
+    width        : 50%;
+    top          : 2%;
+}
+
+#sign-up {
+    position   : absolute;
+    bottom     : 0px;
+    color      : white;
+    left       : 25%;
+    width      : 50%;
+    text-align : center;
+}
+
+.navbar-top {
+    margin-bottom    : 0px;
+    min-height       : 54px;
+    background-color : rgba(15, 21, 37, 0.8);
+    z-index          : 10;
+    position         : absolute;
+    width            : 100%;
+    border           : none;
+    border-radius    : 0px;
+    border-bottom : 1px solid rgb(140, 202, 197);
+}
+
+.navbar-top .btn-primary,.navbar-fixed-bottom .btn-primary {
+    height        : 34px;
+    margin-top    : 15px;
+    border-radius : 0px;
+}
+
+.navbar-loading {
+    border-bottom: 1px solid red !important;
+}
+
+.navbar-brand {
+    color         : red !important;
+    padding-right : 20px;
+    font-size     : 2em;
+}
+
+#clear-selection {
+    position    : absolute;
+    left        : 0px;
+    width       : 123px;
+    height      : 27px;
+    top         : 27px;
+    background  : transparent;
+    color       : white;
+    padding-top : 3px;
+    border-top-left-radius  : 0px;
+    border-top-right-radius : 0px;
+}
+
+#open-left {
+    color        : red;
+    position     : absolute;
+    padding-left : -15px;
+    margin-left  : -15px;
+    height       : 100%;
+    width        : 20px;
+    text-align   : center;
+    font-size    : 1.25em;
+    cursor       : pointer;
+}
+
+#open-left:hover {
+    color    : white;
+}
+
+#info-box {
+    background              : rgba(15, 21, 37, 0.8);
+    color                   : rgb(140, 202, 197);
+    border                  : 2px solid rgb(140, 202, 197);
+    border-radius           : 10px;
+    position                : relative;
+    right                   : 0px;
+    padding-right           : 15px;
+    padding-bottom          : 10px;
+    padding-top				: 1px;
+    width                   : 200px;
+    text-align              : center;
+    margin-top          : 46px;
+    margin-right            : -3px;
+    border-top-left-radius  : 0px;
+    border-top-right-radius : 0px;
+    border-top              : 0px;
+}
+
+#locus-select {
+    min-width  : 200px;
+}
+
+#metric-select {
+    min-width  : 133px;
+}
+
+#normalization-select {
+    min-width  : 133px;
+}
+
+#ts-resolution-select {
+    min-width  : 100px;
+}
+
+#augmentation-select {
+    min-width  : 100px;
+}
+
+.gf-select-menu {
+    padding-bottom      : 10px;
+    border-bottom       : none;
+    -webkit-box-shadow  : none;
+    -moz-box-shadow     : none;
+    box-shadow          : none;
+    height              : 35px;
+    text-align          : right;
+    min-width           : 100px;
+    .gf-select-label {
+        color      : #686868;
+        font-size  : .75em;
+        text-align : left;
+        margin     : 0px 10px;
+    }
+    .ember-select-container {
+        margin-left : 3%;
+        margin-top  : 0px;
+        width       : 94%;
+        height      : 94%;
+    }
+    .ember-select-choice {
+        background    : transparent;
+        border-radius : 0px;
+        color         : white;
+        width         : 100%;
+        height        : 100%;
+    }
+    .ember-select {
+        width : 100%;
+        .dropdown-menu {
+            min-width      : 200px;
+            max-width      : 9999px;
+            padding-bottom : 0px;
+            width          : 94%;
+            margin-left    : 3%;
+            color          : white;
+            background     : rgba(48, 58, 71, 0.901961);
+        }
+    }
+    .ember-select-search {
+        color:black;
+        display: inline-block;
+        white-space: nowrap;
+        z-index: 10000;
+        min-height: 26px;
+        width: 100%;
+        margin: 0;
+        padding-bottom:10px;
+        input {
+            padding-top    : 10px;
+            padding-bottom : 10px;
+            background     : rgb(61, 72, 84);
+            color          : white;
+        }
+    }
+ 	i {
+        color: grey;
+    }
+    .dropzone {
+        height:50px;
+        background: white;
+    }
+    .btn-default {
+        border-color: #686868;
+    }
+}
+
+.gf-select-menu:focus {
+    outline      : none;
+    border-color : white;
+}
+
+.ember-select-choice.btn {
+    i {
+        right: 10%;
+    }
+}
+
+.ember-select-results .ember-select-result-item.highlighted,.ember-typeahead-results .ember-select-result-item.highlighted {
+    background-color : red;
+    color            : black;
+}
+
+.input-add-metric {
+    border      : none;
+    width       : 100%;
+    text-align  : center;
+}
+
+.input-add-metric-label {
+    font-weight : bold;
+}
+
+#slider {
+    width        : 300px;
+    margin-right : 30px;
+}
+
+.ui-rangeSlider {
+    height: 15px;
+}
+
+.ui-rangeSlider-arrow {
+    display: none;
+}
+
+.ui-rangeSlider-container {
+    height: 5px;
+}
+
+.ui-rangeSlider-bar {
+    height      : 5px;
+    background  : red;
+}
+
+.ui-rangeSlider-label {
+    font-size  : 12px;
+    bottom     : 15px;
+    background : none;
+    box-shadow : none;
+    color      : red;
+}
+
+.ui-rangeSlider-label-inner {
+    display: none;
+}
+
+ul.dropdown-menu-form {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#form-selector {
+    position: absolute;
+    left: 2%;
+    bottom: 13%;
+    z-index: 999;
+    li {
+        padding: 4px 4px;
+        border: none;
+        background-color:rgb(182, 182, 182);
+    }
+}
+
+.navbar-fixed-bottom {
+    margin-bottom    : 0px;
+    background-color : rgba(15, 21, 37, 0.8);
+    z-index          : 10;
+    border           : none;
+    border-radius    : 0px;
+}
+
+.form-select-link,.form-select-link:link {
+    cursor            : context-menu;
+    color             : red !important;
+}
+
+.form-select-link:hover,.form-select-link:focus,.form-select-link:active, {
+    color : white !important;
+}
+
+.inactive-form-type {
+    color:grey !important;
+}
+
+.inactive-form-type:hover,.inactive-form-type:focus,.inactive-form-type:active {
+    color: white !important,;
+}
+
+.subfield-button {
+    padding : 4px 4px;
+    color   : red !important;
+    border  : none;
+    cursor  : pointer;
+}
+
+.hidden-subfield {
+    color : grey !important;
+}
+
+.clicked-subfield:hover,.clicked-subfield:focus,.clicked-subfield:active {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+}
+
+#border-select {
+    margin-right: 12px;
+}
+
+.legend {
+    text-align    : right;
+    line-height   : 18px;
+    color         : #555;
+    margin-bottom : 10%;
+    cursor        : context-menu;
+    i {
+        width       : 18px;
+        height      : 18px;
+        float       : left;
+        margin-left : 8px;
+        opacity     : 0.7;
+    }
+}
+
+.legend-title {
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid grey;
+}
+
+.btn-sidebar {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+.btn-sidebar:hover {
+    background-color: #999898;
+}
+
+#button-expand-drawer {
+    float         : right;
+    border-radius : 0px;
+    padding       : 3px;
+}
+
+#button-expand-drawer:hover,#button-contract-drawer:hover {
+    background-color: rgba(200, 200, 200, .2);
+}
+
+#button-contract-drawer {
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.sidebar-table-header {
+    color      : white;
+    text-align : center;
+}
+
+.control-panel {
+    background-color : transparent;
+    color           : white !important;
+    padding-bottom  : 5px;
+    padding-top     : 5px;
+    padding-left    : 5px;
+    margin-right    : 0px !important;
+    margin-left     : 0px !important;
+    .btn {
+        background-color : transparent;
+        color            : white;
+        border-color     : white;
+    }
+    .row {
+        display: table;
+    }
+    [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+.tab-content-sidebar {
+    height:100%;
+    width: 100%;
+    position: absolute;
+}
+
+.one-hop-toggle-wrapper {
+    text-align: center;
+}
+
+#show-unresolved {
+    width: 100%;
+}
+
+#show-resolved {
+    width: 100%;
+}
+
+.input-bad-actor {
+    color      : black !important;
+    text-align : center;
+    height     : 50px;
+    width      : 100%;
+    padding    : 5px;
+}
+
+.profile.list-group {
+    a {
+        cursor : pointer;
+    }
+}
+
+.table-container {
+    height : 90%;
+}
+
+.ember-table-left-table-block {
+    height: inherit !important;
+}
+
+.ember-table-tables-container {
+    height: inherit !important;
+    width: inherit !important;
+}
+
+.antiscroll-inner {
+    height : inherit !important;
+    width  : inherit !important;
+}
+
+.cell-content-rank {
+    float     : left;
+    color     : grey;
+    font-size : .75em;
+}
+
+.row-highlighted {
+    background : rgba(236, 221, 221, 0.3);
+}
+
+.table-inner-text-field {
+    color   : red !important;
+    border  : 1px solid red !important;
+    padding : 3px;
+    width   : 100%;
+}
+
+.chart-container {
+    height: 500px;
+}
+
+#dissection-table {
+    color:black !important;
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+
+#wrapper-dissect-form-type {
+    .ember-select {
+        width: 150px;
+        float: right;
+    }
+}
+
+#wrapper-dissect-run {
+    button {
+        width: 200px !important;
+        float: left;
+    }
+}
+
+#row-dissection-control {
+    color: black !important;
+    div {
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .ember-select {
+        width: 100%;
+    }
+    .ember-select-choice {
+        width: 100%;
+    }
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+
+.report-modal .modal-dialog,.add-columns-modal .modal-dialog {
+    width: 95%;
+}
+
+.report-modal {
+    .modal-content {
+        height: 800px;
+    }
+}
+
+.row-report {
+    height:400px;
+}
+
+.pager {
+    margin-top: 0;
+    margin-bottom: 10px;
+    & > li {
+        & > a {
+            border-radius: 0px;
+            color: white;
+            background   : transparent;
+            border-color : rgb(150, 0, 0);
+        }
+    }
+}
+
+.modal-dialog {
+    padding-top : 0px;
+    margin      : 0px auto;
+}
+
+.modal-content {
+    border-bottom-left-radius  : 30px;
+    border-bottom-right-radius : 30px;
+    border                     : 1px solid rgb(140, 202, 197);
+    border-top                 : none;
+    border-bottom              : 1px solid rgb(140, 202, 197);
+    background-color           : rgba(15, 21, 37, 0.8);
+    color                      : white;
+    .ember-select {
+        color: black;
+    }
+    .btn-cancel {
+        background   : transparent;
+        border-color : grey;
+        color        : grey;
+    }
+    .btn-cancel:hover {
+        background   : transparent;
+        border-color : white;
+        color        : grey;
+    }
+}
+
+.modal-title {
+    color: white;
+}
+
+.modal-header {
+    .close {
+        color       : red;
+        opacity     : 1;
+        border      : none;
+        text-shadow : none;
+    }
+}
+
+.modal-content input,.modal-content .list-group-item,.modal-content .list-group {
+    background   : transparent;
+    border-color : grey;
+    color        : white;
+}
+
+.modal-content .btn-primary,.navbar-top .btn-primary,.navbar-fixed-bottom .btn-primary {
+    background   : transparent;
+    border-color : rgb(150, 0, 0);
+}
+
+.modal-content .btn-primary:hover,.navbar-top .btn-primary:hover,.navbar-fixed-bottom .btn-primary:hover {
+    background   : transparent;
+    border-color : red;
+}
+
+.list-group-form-type-modal {
+    background : white;
+}
+
+.leaflet-top.leaflet-left {
+    background   : rgba(15, 21, 37, 0.8);
+    color        : rgb(140, 202, 197);
+    position     : relative;
+    top          : 54px;
+    display      : flex;
+    padding      : 10px;
+    padding-top  : 2px;
+    padding-left : 2px;
+    width		 : 85px;
+}
+
+.leaflet-top {
+    .leaflet-control {
+        margin-top : 5px;
+    }
+}
+
+.leaflet-control-zoom {
+    height: 52px;
+    a {
+        color      : white;
+        background : transparent;
+    }
+    a:hover {
+        background-color : red;
+        color            : white;
+    }
+}
+
+#button-clear-selection {
+    cursor : pointer;
+}
+
+#button-grab {
+    cursor : pointer;
+}
+
+.leaflet-bottom {
+    padding-bottom : 54px;
+}
+
+.leaflet-container {
+    div.location-filter.button-container {
+        clear:both;
+        a:hover {
+            color: red;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        a.enable-button {
+            padding: 10px;
+        }
+    }
+}
+
+.leaflet-popup-content-wrapper {
+    background    : rgba(15, 21, 37, 0.8);
+    color         : rgb(140, 202, 197);
+    border        : 1px solid rgb(140, 202, 197);
+    border-radius : 10px;
+}
+
+.leaflet-popup-tip {
+    background : transparent;
+    border     : 2px solid rgb(140, 202, 197);
+}
+
+.leaflet-control-attribution {
+    background : rgba(255, 255, 255, 0);
+    color      : rgb(65, 65, 65);
+    a {
+        color : rgb(131, 0, 0);
+    }
+}
+
+.toggle-switch {
+    input[type="checkbox"] + div {
+        display: inline-block;
+        vertical-align: middle;
+        width: 3em;
+        height: 1em;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 0px;
+        margin: 0 .5em;
+        background: transparent;
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), transparent), -webkit-linear-gradient(0deg, #8CCAC5 50%, transparent 50%);
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        background-origin: border-box;
+        background-clip: border-box;
+        overflow: hidden;
+        -webkit-transition-duration: .4s;
+        -webkit-transition-property: padding, width, background-position, text-indent;
+        box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.2) inset, 0 0.45em 0 0.1em rgba(0, 0, 0, 0.05) inset;
+        font-size: 130%;
+    }
+}
+
+#input-colorpicker {
+    font-size  : 1.4em;
+    padding    : 10px;
+    margin-top : 10px;
+    width      : 100%;
+    text-align : center;
+    border     : 1px solid grey;
+}
+
+.color-picker-wrapper {
+    input {
+        display : none;
+    }
+}
+
+;#input-n-steps {
+    font-size  : 1.4em;
+    padding    : 10px;
+    margin-top : 10px;
+    width      : 100%;
+    text-align : center;
+    border     : 1px solid grey;
+}
+
+.input-search-er {
+    padding: 7px;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+.er-modal {
+    .modal-dialog {
+        width: 95%;
+    }
+}
+
+#er-toggle-wrapper {
+    bottom        : 10px;
+    right         : 10px;
+    top           : 10px;
+    text-align    : center;
+    padding       : 10px;
+    border-radius : 10px;
+}
+
+.er-edit-item {
+    border-left   : 4px solid rgb(48, 111, 228);
+}
+
+.mixFadeIn () {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.mixFadeOut() {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@-webkit-keyframes fadeIn  {.mixFadeIn;}
+@-webkit-keyframes fadeOut {.mixFadeOut;}
+
+@-moz-keyframes fadeIn  {.mixFadeIn;}
+@-moz-keyframes fadeOut {.mixFadeOut;}
+
+@keyframes fadeIn  {.mixFadeIn;}
+@keyframes fadeOut {.mixFadeOut;}
+
+.fade-in {
+    opacity:0;
+    -webkit-animation : fadeIn ease-in 1;
+    -moz-animation    : fadeIn ease-in 1;
+    animation         : fadeIn ease-in 1;
+    -webkit-animation-fill-mode :forwards;
+    -moz-animation-fill-mode    :forwards;
+    animation-fill-mode         :forwards;
+    -webkit-animation-duration  : .1s;
+    -moz-animation-duration     : .1s;
+    animation-duration          : .1s;
+}
+
+#did-resolve {
+    opacity:1;
+    -webkit-animation : fadeOut ease-in 1;
+    -moz-animation    : fadeOut ease-in 1;
+    animation         : fadeOut ease-in 1;
+    -webkit-animation-fill-mode :forwards;
+    -moz-animation-fill-mode    :forwards;
+    animation-fill-mode         :forwards;
+    -webkit-animation-duration  : 2s;
+    -moz-animation-duration     : 2s;
+    animation-duration          : 2s;
+}
+
+.greycell {
+    color: rgb(159, 159, 159);
+}
+
+.blackcell {
+    color: rgb(119, 255, 119);
+}
+
+.bluecell {
+    color: rgb(111, 204, 234);
+}
+
+.documentation {
+    color: rgb(0, 205, 159);
+}
+
+.context-menu-selected {
+    background: lightgrey;
+}
+
+.popover {
+    background-color: rgba(15,21,37,1.0);
+}
+
+/* Builder */
+.builder-wrapper {
+    background: rgba(15,21,37,0.8);
+    color : grey;
+    
+    & .metric-property {
+        color: red;
+    };
+    & .metric-definition {
+        color : grey;
+    };
+
+    & .list-group-header {
+        color        : rgb(80, 200, 200);
+        border       : 1px solid white;
+        padding-left : 10px;
+        background: rgba(100, 100, 100, .4);
+    };
+    
+    & .list-group-item {
+        background   : rgba(100, 100, 100, .2);
+        border       : 1px solid grey;
+        padding : 0px;
+        margin   : 0px;
+    };
+    
+    & input {
+      color         : none;
+      background    : rgba(100, 100, 100, .2);
+      border        : 1px solid grey;
+      border-radius : 2px;
+      padding       : 7px;
+      margin        : 5px;
+      width         : 100%;
+      color         : lightgrey;
+      
+    };
+    
+    & .btn-primary {
+        border : none;
+        background : none;
+        width : 100%;
+        border-radius: 0px;
+        &:hover {
+            background : rgba(0, 255, 0, 0.26);
+        }
+    }
+    
+    & .btn-remove {
+        color         : red;
+        border-radius : 0px;
+        background    : none;
+        border        : none;
+
+        width : 100%;
+        
+        &:hover {
+            background : rgba(255, 0, 0, 0.26);
+        }
+    };
+ }
+
+.ember-select-choices {
+    background : none;
+};
+ 
+.ember-select-search-choice {
+    color         : lightgrey;
+    background    : rgba(100, 100, 100, .2);
+    border        : 1px solid lightgrey;
+    border-radius : 2px;
+    margin        : 5px;
+
+    & .ember-select-search-choice-close {
+        color : lightgrey;
+    }
+};
+
+@spirit-color : rgb(140, 202, 197);
+
+.nav-tabs-sidebar {
+    border-bottom: 1px solid rgb(140, 202, 197);
+    padding-bottom: 1px;
+
+    & > li {
+        color          : white;
+        text-shadow    : none;
+        text-indent    : 0px;
+        border         : 1px solid @spirit-color;
+        border-bottom  : 1px solid transparent;
+        background     : darken(@spirit-color, 50%);
+        
+        &.clicked {
+            background-color : transparent;
+        }
+
+        & > a {
+            color           : @spirit-color;
+            text-shadow     : none;
+            text-indent     : 0px;
+            border-radius   : 0px;
+            margin-right    : 0px;
+            padding-top     : 15px;
+            padding-bottom  : 15px;
+            
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.loading {
+        border-bottom: 1px solid red;
+        & > li {
+            border-bottom: 1px solid red;
+        }
+    }
+}
+
+.btn-theme-color {
+    color      : @spirit-color;
+    background : darken(@spirit-color, 50%);
+    border     : 1px solid @spirit-color;;
+    
+    &:hover, &:focus {
+        background-color : transparent;
+        border           : 1px solid white;
+    }
+}
+
+.ember-select-search-choice {
+  background: none !important;
+  color: white !important;
+  border: 1px solid @spirit-color !important;
+  border-radius: 10px !important;
+}
+
+.accordion-toggle {
+    color : darken(@spirit-color, 20%)
+}
+
+/* Drop Down Editor Button */
+/* Ember-Widget.css Override */
+
+.select-edit {
+	color: inherit;
+	background-color: inherit;
+	border-top: 1px solid white;
+    border-radius: 0px;
+}
+
+.select-edit:hover {
+	color: black;
+	border: 1px solid transparent;
+	background-color: red;
+}
+
+.popover-title {
+	color: whitesmoke;
+}
+
+
