@@ -42,7 +42,7 @@
     "type": "git",
     "url": "https://github.com/phronesis-mnemosyne/geofin"
   },
-  "author": "Ben Johnson/Phronesis (ben@gophronesis.com)",
+  "author": "ben@gophronesis.com",
   "license": "ALv2",
   "bugs": {
     "url": "https://github.com/phronesis-mnemosyne/geofin/issues"
